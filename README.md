@@ -54,8 +54,8 @@
 
 ```bash
 # 1. Клонировать репозиторий
-git clone <url>
-cd <repo-name>
+git clone https://github.com/hsemlcourse/hseml-group-project-dayaprofiii
+cd hseml-group-project-dayaprofiii
 
 # 2. Создать виртуальное окружение
 python -m venv .venv
