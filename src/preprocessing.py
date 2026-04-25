@@ -7,7 +7,7 @@ def load_data(data_path: str = '../data/raw/spotify-tracks-dataset.csv') -> pd.D
     Подругажет и возвращает датасета по заданному пути.
     """
     if not os.path.exists(data_path):
-        raise FileNotFoundError(f"Проверьте заданный путь")
+        raise FileNotFoundError("Проверьте заданный путь")
     return pd.read_csv(data_path)
 
 
@@ -64,4 +64,4 @@ def save_processed_data(
     """
     os.makedirs(os.path.dirname(path), exist_ok=True)
     df.to_csv(path, index=False)
-    print(f"Данные успешно сохранены по пути: {path}")
+    print("Данные успешно сохранены по пути: {path}")
