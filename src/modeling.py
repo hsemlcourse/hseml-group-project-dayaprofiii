@@ -6,7 +6,6 @@ from typing import Dict, Tuple, Any
 
 from sklearn.model_selection import train_test_split, GridSearchCV, ParameterGrid
 from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
 from sklearn.pipeline import Pipeline
 from tqdm.auto import tqdm
 from sklearn.linear_model import LogisticRegression
