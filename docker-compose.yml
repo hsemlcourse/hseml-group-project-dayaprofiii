@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  jupyter:
+    build: .
+    container_name: ml-spotify-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/app/notebooks
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./src:/app/src
+    environment:
+      - JUPYTER_TOKEN=mlproject
+    command: jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='mlproject'
+    networks:
+      - ml-network
+
+networks:
+  ml-network:
+    driver: bridge

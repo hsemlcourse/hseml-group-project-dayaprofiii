@@ -117,7 +117,9 @@ def train_models(
         trained_models[model_name] = pipe
 
     results_df = pd.DataFrame(results).sort_values('F1', ascending=False)
-    results_df = results_df[['Model', 'F1', 'Accuracy', 'Precision', 'Recall', 'ROC_AUC']]
+    results_df = results_df[
+        ['Model', 'F1', 'Accuracy', 'Precision', 'Recall', 'ROC_AUC']
+    ]
 
     return results_df, trained_models
 
@@ -168,7 +170,11 @@ def hyperparameter_tuning(
     best_score = -np.inf
     best_estimator = None
 
-    for params in tqdm(list(ParameterGrid(param_grid)), desc=f'GridSearch {model_name}', unit='comb'):
+    for params in tqdm(
+        list(ParameterGrid(param_grid)),
+        desc=f'GridSearch {model_name}',
+        unit='comb'
+    ):
         candidate_grid = {k: [v] for k, v in params.items()}
         grid_search = GridSearchCV(
             pipe,

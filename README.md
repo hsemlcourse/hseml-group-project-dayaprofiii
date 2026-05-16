@@ -70,6 +70,17 @@ pip install notebook
 jupyter notebook
 ```
 
+## Качество кода
+
+### Линтер (flake8)
+
+Проект использует **flake8** для анализа качества кода. Конфигурация находится в `.flake8`.
+
+Запуск линтера:
+
+```bash
+flake8 src/ tests/ --config=.flake8
+
 ## Данные
 
 - `data/raw/` — исходные файлы
@@ -95,3 +106,4 @@ jupyter notebook
 ## Отчёт
 
 Финальный отчёт: [`report/report.md`](report/report.md)
+```

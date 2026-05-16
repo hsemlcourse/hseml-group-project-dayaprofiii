@@ -2,7 +2,9 @@
 import pandas as pd
 
 
-def load_data(data_path: str = '../data/raw/spotify-tracks-dataset.csv') -> pd.DataFrame:
+def load_data(
+    data_path: str = '../data/raw/spotify-tracks-dataset.csv',
+) -> pd.DataFrame:
     """
     Подругажет и возвращает датасета по заданному пути.
     """
@@ -14,8 +16,8 @@ def load_data(data_path: str = '../data/raw/spotify-tracks-dataset.csv') -> pd.D
 def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     """
     Очистка данных: удаление дубликатов, обработка типов данных.
-
-    Функция принимает датафрейм, удаляет в нём дубликаты, удаляет при необходимости пропуски
+    Функция принимает датафрейм, удаляет в нём дубликаты, удаляет
+    при необходимости пропуски
     и преобразовывает столбец о непристойности композиции к целочисленному типу
     """
     df = df.drop_duplicates()
